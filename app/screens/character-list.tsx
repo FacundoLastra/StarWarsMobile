@@ -1,16 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, SafeAreaView, Text, FlatList} from 'react-native';
 import CharacterItem from '../components/character-item';
 import {ICharacterApiResponse} from '../models/character';
 import {InfiniteData, useInfiniteQuery} from 'react-query';
 import {fetchCharacterList} from '../services/apiCallsService';
-import {ActivityIndicator, Colors} from 'react-native-paper';
+import {ActivityIndicator, Colors, Searchbar} from 'react-native-paper';
 
 const CharacterList = () => {
   const {data, error, fetchNextPage, hasNextPage, isFetchingNextPage} =
     useInfiniteQuery('characters', fetchCharacterList, {
       getNextPageParam: lastPage => lastPage.next,
     });
+
+  const [searchQuery, setSearchQuery] = useState('');
 
   const getCharacters = (dataInfo: InfiniteData<ICharacterApiResponse>) => {
     return dataInfo.pages.map(page => page.results).flat();
@@ -22,6 +24,14 @@ const CharacterList = () => {
     }
   };
 
+  const getFilteredCharacters = (
+    dataInfo: InfiniteData<ICharacterApiResponse>,
+  ) => {
+    return getCharacters(dataInfo).filter(character =>
+      character.name.includes(searchQuery),
+    );
+  };
+
   const renderSpinner = () => {
     return <ActivityIndicator animating={true} color={Colors.red800} />;
   };
@@ -30,8 +40,15 @@ const CharacterList = () => {
     <SafeAreaView>
       {!error && data && (
         <>
+          <Searchbar
+            placeholder="Search"
+            onChangeText={setSearchQuery}
+            value={searchQuery}
+          />
           <FlatList
-            data={getCharacters(data)}
+            data={
+              searchQuery ? getFilteredCharacters(data) : getCharacters(data)
+            }
             keyExtractor={item => item.url}
             renderItem={({item, index}) => {
               return <CharacterItem data={item} itemIndex={index} />;

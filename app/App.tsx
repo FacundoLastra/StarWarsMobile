@@ -20,7 +20,10 @@ const App = () => {
       <QueryClientProvider client={queryClient}>
         <StatusBar hidden />
         <NavigationContainer>
-          <Stack.Navigator>
+          <Stack.Navigator
+            screenOptions={{
+              headerShown: false,
+            }}>
             <Stack.Screen
               name="StarWarsStackScreens"
               component={StarwarsStackScreens}

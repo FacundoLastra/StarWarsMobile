@@ -1,6 +1,6 @@
-const API_URL = 'https://swapi.dev/api';
+import {API_URL} from '../constants/default';
 
-const makeApiCall = (url: string) => {
+export const makeApiCall = (url: string) => {
   return fetch(url, {
     method: 'GET',
   }).then(response => response.json());
@@ -9,6 +9,5 @@ const makeApiCall = (url: string) => {
 export const fetchCharacterList = ({
   pageParam = `${API_URL}/people?page=1`,
 }) => {
-  console.log('proxima pagina', pageParam);
   return makeApiCall(pageParam);
 };

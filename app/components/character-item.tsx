@@ -1,31 +1,38 @@
 import React from 'react';
 import {Text} from 'react-native';
 import {ICharacter} from '../models/character';
-import {Card, Title, Paragraph} from 'react-native-paper';
+import {Card, Title, Paragraph, TouchableRipple} from 'react-native-paper';
+import {useNavigation} from '@react-navigation/native';
 
-const CharacterItem = React.memo<{data: ICharacter; itemIndex: number}>(
-  props => {
-    const {data, itemIndex} = props;
-    return (
+const CharacterItem = React.memo<{
+  data: ICharacter;
+  itemIndex: number;
+}>(props => {
+  const {data, itemIndex} = props;
+  const navigation = useNavigation();
+  return (
+    <TouchableRipple
+      onPress={() => navigation.navigate('CharacterDetail', {character: data})}
+      rippleColor="rgba(0, 0, 0, .32)">
       <Card>
         <Card.Content>
           <Title>{data.name}</Title>
           <Paragraph>
-            <Text>Personaje numero: {itemIndex + 1}</Text>
+            <Text>Character number: {itemIndex + 1}</Text>
           </Paragraph>
           <Paragraph>
-            <Text>Altura: {data.height}</Text>
+            <Text>Height: {data.height}</Text>
           </Paragraph>
           <Paragraph>
-            <Text>Peso: {data.mass} Kg</Text>
+            <Text>Mass: {data.mass} Kg</Text>
           </Paragraph>
           <Paragraph>
-            <Text>Numero de Peliculas: {data.films.length}</Text>
+            <Text>Number of Films: {data.films.length}</Text>
           </Paragraph>
         </Card.Content>
       </Card>
-    );
-  },
-);
+    </TouchableRipple>
+  );
+});
 
 export default CharacterItem;
