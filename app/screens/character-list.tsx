@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, SafeAreaView, Text, FlatList} from 'react-native';
+import {View, SafeAreaView, Text, FlatList, StyleSheet} from 'react-native';
 import CharacterItem from '../components/character-item';
 import {ICharacterApiResponse} from '../models/character';
 import {InfiniteData, useInfiniteQuery} from 'react-query';
@@ -33,11 +33,17 @@ const CharacterList = () => {
   };
 
   const renderSpinner = () => {
-    return <ActivityIndicator animating={true} color={Colors.red800} />;
+    return (
+      <ActivityIndicator
+        style={styles.spinner}
+        animating={true}
+        color={Colors.red800}
+      />
+    );
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       {!error && data && (
         <>
           <Searchbar
@@ -68,5 +74,15 @@ const CharacterList = () => {
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+  },
+  spinner: {
+    margin: 8,
+  },
+});
 
 export default CharacterList;
