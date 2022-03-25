@@ -9,7 +9,7 @@ Used technologies.
 - React Native
 - React
 
-Dependencias utilizadas:
+Dependencies used:
 - react-query
 - react-native-paper
 
