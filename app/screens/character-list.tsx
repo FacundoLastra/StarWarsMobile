@@ -2,15 +2,13 @@ import React, {useState} from 'react';
 import {View, SafeAreaView, Text, FlatList, StyleSheet} from 'react-native';
 import CharacterItem from '../components/character-item';
 import {ICharacterApiResponse} from '../models/character';
-import {InfiniteData, useInfiniteQuery} from 'react-query';
-import {fetchCharacterList} from '../services/apiCallsService';
+import {InfiniteData} from 'react-query';
 import {ActivityIndicator, Colors, Searchbar} from 'react-native-paper';
+import {useFetchCharacters} from '../helpers/useFetchCharacters';
 
 const CharacterList = () => {
   const {data, error, fetchNextPage, hasNextPage, isFetchingNextPage} =
-    useInfiniteQuery('characters', fetchCharacterList, {
-      getNextPageParam: lastPage => lastPage.next,
-    });
+    useFetchCharacters();
 
   const [searchQuery, setSearchQuery] = useState('');
 

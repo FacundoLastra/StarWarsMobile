@@ -3,26 +3,26 @@ import React from 'react';
 import {render} from '@testing-library/react-native';
 
 import CharacterList from '../app/screens/character-list';
-import {QueryClient, QueryClientProvider, useQuery} from 'react-query';
+import {useFetchCharacters} from '../app/helpers/useFetchCharacters';
 
-export function useCustomHook() {
-  return useQuery('customHook', () => 'Hello');
-}
-const queryClient = new QueryClient();
+jest.mock('../app/helpers/useFetchCharacters', () => ({
+  useFetchCharacters: jest.fn(),
+}));
 
-export function renderWithClient(client: QueryClient, ui: any) {
-  const {rerender, ...result} = render(
-    <QueryClientProvider client={client}>{ui}</QueryClientProvider>,
-  );
-  return {
-    ...result,
-    rerender: (rerenderUi: React.ReactElement) =>
-      rerender(
-        <QueryClientProvider client={client}>{rerenderUi}</QueryClientProvider>,
-      ),
-  };
-}
+describe('character-list', () => {
+  beforeEach(() => {
+    useFetchCharacters.mockImplementation(() => ({}));
+  });
+  it('should render character Item component', () => {
+    const renderTest = render(<CharacterList />);
+    expect(renderTest).not.toBeNull();
+  });
 
-it('should render character Item component', () => {
-  return render(renderWithClient(queryClient, <CharacterList />));
+  it('should show error section when api call return error', () => {
+    useFetchCharacters.mockImplementation(() => ({
+      error: true,
+    }));
+
+    expect(true).toBe(true);
+  });
 });

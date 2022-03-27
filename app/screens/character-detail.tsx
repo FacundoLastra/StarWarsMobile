@@ -1,9 +1,8 @@
 import React, {useEffect} from 'react';
 import {SafeAreaView, StyleSheet, ScrollView, BackHandler} from 'react-native';
 import {Divider, Headline, List, Subheading} from 'react-native-paper';
-import {useQueries} from 'react-query';
+import {useFetchFromUrlArray} from '../helpers/useFetchFromUrlArray';
 import {ICharacter} from '../models/character';
-import {makeApiCall} from '../services/apiCallsService';
 
 const CharacterDetail = ({route}: {route: any}) => {
   const character: ICharacter = route.params.character;
@@ -16,31 +15,13 @@ const CharacterDetail = ({route}: {route: any}) => {
     return () => backHandler.remove();
   }, []);
 
-  const filmsQueries = useQueries(
-    character.films.map(filmUrl => {
-      return {
-        queryKey: ['film', filmUrl],
-        queryFn: () => makeApiCall(filmUrl),
-      };
-    }),
-  );
+  const filmsQueries = useFetchFromUrlArray(character.films, 'films');
 
-  const vehiclesQueries = useQueries(
-    character.vehicles.map(vehiculeUrl => {
-      return {
-        queryKey: ['vehicles', vehiculeUrl],
-        queryFn: () => makeApiCall(vehiculeUrl),
-      };
-    }),
-  );
+  const vehiclesQueries = useFetchFromUrlArray(character.vehicles, 'vehicules');
 
-  const starshipsQueries = useQueries(
-    character.starships.map(starshipUrl => {
-      return {
-        queryKey: ['starships', starshipUrl],
-        queryFn: () => makeApiCall(starshipUrl),
-      };
-    }),
+  const starshipsQueries = useFetchFromUrlArray(
+    character.starships,
+    'starships',
   );
 
   return (
