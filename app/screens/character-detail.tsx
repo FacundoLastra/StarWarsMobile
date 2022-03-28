@@ -38,6 +38,7 @@ const CharacterDetail = ({route}: {route: any}) => {
         <List.Section title="Additional Information">
           <List.Accordion
             title="Films"
+            testID="CharacterDetail.FilmsAccordion"
             left={props => <List.Icon {...props} icon="film" />}>
             {filmsQueries.map((querry, i) => {
               return <Subheading key={i}>{querry.data?.title}</Subheading>;

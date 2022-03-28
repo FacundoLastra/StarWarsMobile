@@ -36,6 +36,7 @@ const CharacterList = () => {
         style={styles.spinner}
         animating={true}
         color={Colors.red800}
+        testID="CharacterList.spinner"
       />
     );
   };

@@ -1,6 +1,6 @@
 import 'react-native';
 import React from 'react';
-import {render} from '@testing-library/react-native';
+import {fireEvent, render} from '@testing-library/react-native';
 import {useFetchFromUrlArray} from '../app/helpers/useFetchFromUrlArray';
 import CharacterDetail from '../app/screens/character-detail';
 import {ICharacter} from '../app/models/character';
@@ -37,5 +37,16 @@ describe('character-detail', () => {
   it('should render character Item component', () => {
     const renderTest = render(<CharacterDetail route={mockedRouteParam} />);
     expect(renderTest).not.toBeNull();
+  });
+
+  it('should render a film', () => {
+    useFetchFromUrlArray.mockImplementation(() => [
+      {data: {title: 'StarWars4'}},
+    ]);
+    const {getByTestId, getByText} = render(
+      <CharacterDetail route={mockedRouteParam} />,
+    );
+    fireEvent.press(getByTestId('CharacterDetail.FilmsAccordion'));
+    getByText('StarWars4');
   });
 });
