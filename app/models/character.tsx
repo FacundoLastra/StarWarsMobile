@@ -8,10 +8,10 @@ export interface ICharacter {
   mass: string;
   skin_color: string;
   homeworld: string;
-  films: [];
-  species: [];
-  starships: [];
-  vehicles: [];
+  films: string[];
+  species: string[];
+  starships: string[];
+  vehicles: string[];
   url: string;
   created: string;
   edited: string;

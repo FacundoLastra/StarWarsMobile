@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for app/components/character-item.tsx</title>
+    <title>Code coverage report for navigator/starwars-stack-screens.tsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../prettify.css" />
-    <link rel="stylesheet" href="../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../sort-arrow-sprite.png);
+            background-image: url(../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">app/components</a> character-item.tsx</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">navigator</a> starwars-stack-screens.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -37,9 +37,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>2/3</span>
             </div>
         
             
@@ -98,22 +98,32 @@
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -123,60 +133,41 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import {Text} from 'react-native';
-import {ICharacter} from '../models/character';
-import {Card, Title, Paragraph, TouchableRipple} from 'react-native-paper';
-import {useNavigation} from '@react-navigation/native';
 &nbsp;
-const CharacterItem = React.memo&lt;{
-  data: ICharacter;
-  itemIndex: number;
-}&gt;(props =&gt; {
-  const {data, itemIndex} = props;
-  const navigation = useNavigation();
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+&nbsp;
+import CharacterList from '../screens/character-list';
+import CharacterDetail from '../screens/character-detail';
+import {LogoTitle} from '../components/logo-title';
+&nbsp;
+const Stack = createNativeStackNavigator();
+&nbsp;
+const StarwarsStackScreens = () =&gt; {
   return (
-    &lt;TouchableRipple
-      onPress={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >navigation.navigate('CharacterDetail', {character: data})}</span>
-      rippleColor="rgba(0, 0, 0, .32)"&gt;
-      &lt;Card&gt;
-        &lt;Card.Content&gt;
-          &lt;Title&gt;{data.name}&lt;/Title&gt;
-          &lt;Paragraph&gt;
-            &lt;Text&gt;Character number: {itemIndex + 1}&lt;/Text&gt;
-          &lt;/Paragraph&gt;
-          &lt;Paragraph&gt;
-            &lt;Text&gt;Height: {data.height}&lt;/Text&gt;
-          &lt;/Paragraph&gt;
-          &lt;Paragraph&gt;
-            &lt;Text&gt;Mass: {data.mass} Kg&lt;/Text&gt;
-          &lt;/Paragraph&gt;
-          &lt;Paragraph&gt;
-            &lt;Text&gt;Number of Films: {data.films.length}&lt;/Text&gt;
-          &lt;/Paragraph&gt;
-        &lt;/Card.Content&gt;
-      &lt;/Card&gt;
-    &lt;/TouchableRipple&gt;
+    &lt;Stack.Navigator
+      screenOptions={{
+        headerShown: true,
+      }}&gt;
+      &lt;Stack.Screen
+        name="CharacterList"
+        component={CharacterList}
+        options={{
+          headerTitle: props =&gt; &lt;LogoTitle {...props} /&gt;,
+        }}
+      /&gt;
+      &lt;Stack.Screen
+        name="CharacterDetail"
+        component={CharacterDetail}
+        options={{
+          headerTitle: <span class="fstat-no" title="function not covered" >pr</span>ops =&gt; <span class="cstat-no" title="statement not covered" >&lt;LogoTitle {...props} /&gt;,</span>
+        }}
+      /&gt;
+    &lt;/Stack.Navigator&gt;
   );
-});
+};
 &nbsp;
-export default CharacterItem;
+export default StarwarsStackScreens;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -184,16 +175,16 @@ export default CharacterItem;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sun Mar 27 2022 21:46:48 GMT-0300 (hora estándar de Argentina)
+                at Sun Mar 27 2022 21:30:33 GMT-0300 (hora estándar de Argentina)
             </div>
-        <script src="../../prettify.js"></script>
+        <script src="../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../sorter.js"></script>
-        <script src="../../block-navigation.js"></script>
+        <script src="../sorter.js"></script>
+        <script src="../block-navigation.js"></script>
     </body>
 </html>
     

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1648341279170" clover="3.2.0">
-  <project timestamp="1648341279170" name="All files">
-    <metrics statements="66" coveredstatements="41" conditionals="12" coveredconditionals="3" methods="34" coveredmethods="10" elements="112" coveredelements="54" complexity="0" loc="66" ncloc="66" packages="7" files="10" classes="10"/>
+<coverage generated="1648428408136" clover="3.2.0">
+  <project timestamp="1648428408136" name="All files">
+    <metrics statements="66" coveredstatements="50" conditionals="12" coveredconditionals="4" methods="34" coveredmethods="18" elements="112" coveredelements="72" complexity="0" loc="66" ncloc="66" packages="7" files="10" classes="10"/>
     <package name="app">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="App.tsx" path="C:\Users\facundo.lastra\Desktop\StarWarsMobile\app\App.tsx">
@@ -17,7 +17,7 @@
       <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
       <file name="character-item.tsx" path="C:\Users\facundo.lastra\Desktop\StarWarsMobile\app\components\character-item.tsx">
         <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="7" count="3" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
@@ -25,51 +25,51 @@
       </file>
       <file name="logo-title.tsx" path="C:\Users\facundo.lastra\Desktop\StarWarsMobile\app\components\logo-title.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
       </file>
     </package>
     <package name="app.constants">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="default.tsx" path="C:\Users\facundo.lastra\Desktop\StarWarsMobile\app\constants\default.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
       </file>
     </package>
     <package name="app.helpers">
-      <metrics statements="8" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
       <file name="useFetchCharacters.tsx" path="C:\Users\facundo.lastra\Desktop\StarWarsMobile\app\helpers\useFetchCharacters.tsx">
-        <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
       </file>
       <file name="useFetchFromUrlArray.tsx" path="C:\Users\facundo.lastra\Desktop\StarWarsMobile\app\helpers\useFetchFromUrlArray.tsx">
-        <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
       </file>
     </package>
     <package name="app.navigator">
-      <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
       <file name="starwars-stack-screens.tsx" path="C:\Users\facundo.lastra\Desktop\StarWarsMobile\app\navigator\starwars-stack-screens.tsx">
-        <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
+        <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
       </file>
     </package>
     <package name="app.screens">
       <metrics statements="34" coveredstatements="22" conditionals="11" coveredconditionals="3" methods="19" coveredmethods="7"/>
       <file name="character-detail.tsx" path="C:\Users\facundo.lastra\Desktop\StarWarsMobile\app\screens\character-detail.tsx">
         <metrics statements="17" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="6"/>
-        <line num="7" count="2" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
@@ -85,38 +85,38 @@
         <line num="51" count="0" type="stmt"/>
         <line num="57" count="1" type="stmt"/>
         <line num="59" count="0" type="stmt"/>
-        <line num="68" count="2" type="stmt"/>
+        <line num="68" count="3" type="stmt"/>
       </file>
       <file name="character-list.tsx" path="C:\Users\facundo.lastra\Desktop\StarWarsMobile\app\screens\character-list.tsx">
         <metrics statements="17" coveredstatements="9" conditionals="11" coveredconditionals="3" methods="9" coveredmethods="1"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
         <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="21" count="0" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
         <line num="58" count="0" type="stmt"/>
-        <line num="76" count="2" type="stmt"/>
+        <line num="76" count="3" type="stmt"/>
       </file>
     </package>
     <package name="app.services">
-      <metrics statements="5" coveredstatements="2" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
       <file name="apiCallsService.tsx" path="C:\Users\facundo.lastra\Desktop\StarWarsMobile\app\services\apiCallsService.tsx">
-        <metrics statements="5" coveredstatements="2" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
+        <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
       </file>
     </package>
   </project>

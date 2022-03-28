@@ -19,7 +19,6 @@ const StarwarsStackScreens = () => {
         component={CharacterList}
         options={{
           headerTitle: props => <LogoTitle {...props} />,
-          headerTitleAlign: 'center',
         }}
       />
       <Stack.Screen
@@ -27,7 +26,6 @@ const StarwarsStackScreens = () => {
         component={CharacterDetail}
         options={{
           headerTitle: props => <LogoTitle {...props} />,
-          headerTitleAlign: 'center',
         }}
       />
     </Stack.Navigator>
