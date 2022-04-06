@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
+import React, {FunctionComponent, useState} from 'react';
 import {View, SafeAreaView, Text, FlatList, StyleSheet} from 'react-native';
 import CharacterItem from '../components/character-item';
-import {ICharacterApiResponse} from '../models/character';
+import {ICharacter, ICharacterApiResponse} from '../models/character';
 import {InfiniteData} from 'react-query';
 import {ActivityIndicator, Colors, Searchbar} from 'react-native-paper';
 import {useFetchCharacters} from '../helpers/useFetchCharacters';
 
-const CharacterList = () => {
+const CharacterList: FunctionComponent = () => {
   const {data, error, fetchNextPage, hasNextPage, isFetchingNextPage} =
     useFetchCharacters();
 
@@ -25,12 +25,12 @@ const CharacterList = () => {
   const getFilteredCharacters = (
     dataInfo: InfiniteData<ICharacterApiResponse>,
   ) => {
-    return getCharacters(dataInfo).filter(character =>
+    return getCharacters(dataInfo).filter((character: ICharacter) =>
       character.name.includes(searchQuery),
     );
   };
 
-  const renderSpinner = () => {
+  const renderSpinner: FunctionComponent = () => {
     return (
       <ActivityIndicator
         style={styles.spinner}

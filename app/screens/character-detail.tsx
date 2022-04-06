@@ -1,14 +1,25 @@
 import React, {useEffect} from 'react';
-import {SafeAreaView, StyleSheet, ScrollView, BackHandler} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  ScrollView,
+  BackHandler,
+  NativeEventSubscription,
+} from 'react-native';
 import {Divider, Headline, List, Subheading} from 'react-native-paper';
 import {useFetchFromUrlArray} from '../helpers/useFetchFromUrlArray';
 import {ICharacter} from '../models/character';
+import {RouteProp} from '@react-navigation/native';
 
-const CharacterDetail = ({route}: {route: any}) => {
+const CharacterDetail: Element = ({
+  route,
+}: {
+  route: RouteProp<{params: {character: ICharacter}}, 'params'>;
+}) => {
   const character: ICharacter = route.params.character;
 
   useEffect(() => {
-    const backHandler = BackHandler.addEventListener(
+    const backHandler: NativeEventSubscription = BackHandler.addEventListener(
       'hardwareBackPress',
       () => true,
     );

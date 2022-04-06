@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 
-export const LogoTitle = (_props: any) => {
+export const LogoTitle = () => {
   return (
     <View style={styles.container}>
       <Image
